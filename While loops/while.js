@@ -7,7 +7,6 @@ while (num < 20) {
     num++; 
 }
 
-
 //Print all even numbers between 10 and 40.
 
 var num2 = 10;
