@@ -192,49 +192,49 @@
 
 //  The Ternary Operator and Switch Statements - Ternary is Basically the 3 part method one line method. 
 
-var firstName = 'John'
-var age = 22; 
+// var firstName = 'John'
+// var age = 22; 
 
-age >= 18 ? console.log(firstName + ' drinks beer.')
-: console.log(firstName + ' drinks juice.');
+// age >= 18 ? console.log(firstName + ' drinks beer.')
+// : console.log(firstName + ' drinks juice.');
 
-var drink = age >= 18 ? 'beer' : 'juice';
-
-
-// Switch Statements
-
-var job = 'instructor';
-
-switch(job){
-    case 'teacher':
-    case 'instructor':
-        console.log(firstName + ' teaches kids how to code.');
-        break;
-    case 'driver':
-        console.log(firstName + ' drives a uber lisbon');
-        break;
-    case 'designer':
-        console.log(firstName + ' designs becautiful clothes ');
-        break;
-    default:
-        console.log(firstname + ' does something else.');            
-}
+// var drink = age >= 18 ? 'beer' : 'juice';
 
 
-age = 56;
-switch(true) {
-    case age < 13:
-        console.log(firstName + ' is a boy.');
-        break;
-    case age >= 13 && age <20:
-        console.log(firstName + ' is a teenager.');
-        break;
-    case (age >= 20 && age < 30):
-        console.log(firstName + ' is a a young man.');
-        break;
-    default:
-        console.log(firstName + ' is a man.');   
-}
+// // Switch Statements
+
+// var job = 'instructor';
+
+// switch(job){
+//     case 'teacher':
+//     case 'instructor':
+//         console.log(firstName + ' teaches kids how to code.');
+//         break;
+//     case 'driver':
+//         console.log(firstName + ' drives a uber lisbon');
+//         break;
+//     case 'designer':
+//         console.log(firstName + ' designs becautiful clothes ');
+//         break;
+//     default:
+//         console.log(firstname + ' does something else.');            
+// }
+
+
+// age = 56;
+// switch(true) {
+//     case age < 13:
+//         console.log(firstName + ' is a boy.');
+//         break;
+//     case age >= 13 && age <20:
+//         console.log(firstName + ' is a teenager.');
+//         break;
+//     case (age >= 20 && age < 30):
+//         console.log(firstName + ' is a a young man.');
+//         break;
+//     default:
+//         console.log(firstName + ' is a man.');   
+// }
 
 // Three ways to write conditional code: Ternary Operator, Switch Statements, if else statements. 
 
@@ -526,26 +526,191 @@ switch(true) {
 
 // Coding Challenge 4
 
-var mark = {
-    firstName: 'Mark',
-    lastName: 'Smith',
-    height: 1.9,
-    bodyMass: 68,
-    calcBMI: function(){
-        this.bmi = this.bodyMass / (this.height * this.height);
-        return this.bmi;
+// var mark = {
+//     firstName: 'Mark',
+//     lastName: 'Smith',
+//     height: 1.9,
+//     bodyMass: 68,
+//     calcBMI: function(){
+//         this.bmi = this.bodyMass / (this.height * this.height);
+//         return this.bmi;
+//     }
+// }
+
+// var john = {
+//     firstName: 'John',
+//     lastName: 'Miller',
+//     height: 1.65,
+//     bodyMass: 92,
+//     calcBMI: function(){
+//         this.bmi = this.bodyMass / (this.height * this.height);
+//         return this.bmi;
+//     }
+// }
+
+
+// if (john.calcBMI() > mark.calcBMI()){
+//     console.log (john.firstName + ' Has a higher BMI than Mark with a higher BMI of '+ john.bmi);
+// }
+
+// else if (mark.bmi > john.bmi){
+//     console.log (mark.firstName + ' has a higher BMI than John with a higher BMI of ' + mark.bmi);
+// }
+
+// else {
+//     console.log (john.firstName + ' and ' + mark.firstName + ' both have the same BMI.');
+// }
+
+// *********************
+// Loops and Iteration
+// *********************
+
+
+// var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+
+// For Loop
+
+// for (var i = 0; i < john.length; i++) {
+//     console.log(john[i]);
+// }
+
+
+// // While loop
+
+// var i = 0
+// while (i < john.length){
+//     console.log(john[i]);
+//     i++;
+// }
+
+
+// Continue and break statements
+
+// var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
+
+// // for (var i = 0; i < john.length; i++) {
+// //     if (typeof john[i] !== 'string') continue;
+// //     console.log(john[i]);
+// // }
+
+
+// // for (var i = 0; i < john.length; i++) {
+// //     if (typeof john[i] !== 'string') break;
+// //     console.log(john[i]);
+// // }
+
+// // Looping backwards - Proper way of doing it.
+
+// for (var i = john.length - 1; i >= 0; i--){
+//     console.log(john[i]);
+// }
+
+// // My attempt at Looping backwards
+
+// for (var i = 5; i < john.length; i--){
+//     if (i === -1) break;
+//     console.log(john[i]);
+// }
+
+
+
+// Coding Challenege 5 
+
+var John = {
+    fullname: 'Jon Boykins',
+    bills: [ 424, 438, 268, 480, 442],
+    tipCal: function() {
+        this.tips = [];
+        this.finalvalues = [];
+    
+        for (var i = 0; i < this.bills.length; i++)
+        {
+            // Determine percentage based on tipping rules
+            var percentage;
+            var bill = this.bills[i];
+
+            if (bill < 50) {
+               percentage = .2; 
+            } 
+            else if (bill >= 50 && bill[i] < 200){
+                percentage = .15;
+            }
+
+            else {
+                percentage = .1
+            }
+            // Add results to the corresponding arrays.
+
+            this.tips[i] = bill * percentage;
+            this.finalvalues[i] = bill + bill * percentage;
+        }
     }
 }
 
-mark.calcBMI();
-console.log(mark);
 
 
-// var markHeight, markMass;
-// markHeight = 1.9; // Height in Meters 
-// markMass = 68; //Weight in KG
 
-// var johnHeight, johnMass;
-// johnHeight = 1.5; // Height in Meters
-// johnMass = 55; //Weight in KG
-// 
+var mark = {
+    fullname: 'Mark Leo',
+    bills: [77, 375, 110, 45],
+    markCal: function(){
+        this.markTips = [];
+        this.markFinal = [];
+
+        for (var i = 0; i < this.bills.length; i++)
+        {
+            var percentage;
+            var bill = this.bills[i];
+
+            if (bill < 100){
+                percentage = 0.2;
+            }
+
+            else if (bill > 100 && bill <= 300){
+                percentage = 0.10;
+            }
+
+            else{
+                percentage = 0.25;
+            }
+
+
+            this.markTips[i] = bill * percentage;
+            this.markFinal[i] = bill + bill * percentage;
+
+
+        }
+    }
+}
+John.tipCal();
+mark.markCal();
+console.log(mark, John);
+
+
+// Function on tips
+
+
+function calcAverage(tips){
+    var sum = 0;
+    for(var i = 0; i < tips.length; i++){
+        sum = sum + tips[i];
+    }
+    return sum / tips.length;
+}
+
+
+John.tipCal();
+mark.markCal();
+console.log(mark, John);
+
+John.average = calcAverage(John.tips);
+mark.average = calcAverage(mark.markTips);
+console.log(John,mark);
+
+if (John.average > mark.average){
+    console.log(John.fullname + ' \'s family pays higher tips with an average of $' + John.average);
+}
+else if (mark.average > John.average){
+    console.log(mark.fullname + ' \'s family pays higher tips with an average of $' + mark.average);
+
+}
