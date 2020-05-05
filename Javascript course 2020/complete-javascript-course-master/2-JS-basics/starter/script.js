@@ -648,8 +648,6 @@ var John = {
 }
 
 
-
-
 var mark = {
     fullname: 'Mark Leo',
     bills: [77, 375, 110, 45],
